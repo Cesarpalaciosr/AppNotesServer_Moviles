@@ -4,16 +4,19 @@ import jwt from 'jsonwebtoken';
 import config from '../config/config';
 
 function createToken(user:IUser) {
-    return jwt.sign({id: user.id,
-        username: user.username
-    },
+    return jwt.sign(
+        {
+            id: user.id,
+            username: user.username
+        },
     config.jwtSecret,
+    //expira en 15 dias
      {expiresIn: 1296000});
 }
 export const signUp = async (req: Request, res: Response): Promise<Response> => {
     console.log(req.body);
     
-    if(!req.body.email || !req.body.password){
+    if(!req.body.username || !req.body.password){
         return res.status(400).json({msg:'Please. Send your email and password'})
     }
 

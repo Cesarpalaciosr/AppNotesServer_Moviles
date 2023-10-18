@@ -17,13 +17,16 @@ const user_1 = __importDefault(require("../models/user"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const config_1 = __importDefault(require("../config/config"));
 function createToken(user) {
-    return jsonwebtoken_1.default.sign({ id: user.id,
+    return jsonwebtoken_1.default.sign({
+        id: user.id,
         username: user.username
-    }, config_1.default.jwtSecret, { expiresIn: 1296000 });
+    }, config_1.default.jwtSecret, 
+    //expira en 15 dias
+    { expiresIn: 1296000 });
 }
 const signUp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(req.body);
-    if (!req.body.email || !req.body.password) {
+    if (!req.body.username || !req.body.password) {
         return res.status(400).json({ msg: 'Please. Send your email and password' });
     }
     //Busca coincidencias en la base de datos con el email proporcionado

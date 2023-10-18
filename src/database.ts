@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import config from "./config/config";
 
+
 const dbOptions = {
     useNewUrlParser: true,
     useUnifiedTopology:true,

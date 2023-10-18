@@ -3,13 +3,14 @@ import morgan from 'morgan';
 import cors from 'cors';
 import passport from 'passport';
 import passportMiddleware from './middlewares/passport';
+import dotenv from 'dotenv';
 
 import authRoutes from './routes/auth.routes';
 import specialRoutes from './routes/special.routes';
 
 //initialization
 const app = express();
-
+dotenv.config();
 //settings
 app.set('port', process.env.PORT || 3000);
 
