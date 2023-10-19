@@ -3,9 +3,9 @@ import { Model, Schema, Document, model } from "mongoose";
 //INTERFACE
 export interface Notes extends Document {
     owner:string,
-    titulo:string,
+    tittle:string,
     description:string,
-    fecha:string,
+    date:string,
     folder:string,
     
 }
@@ -19,7 +19,7 @@ const NotesSchema = new Schema ({
         required:true,
         trim:true
     },
-    titulo:{
+    tittle:{
         type:String,
         unique:false,
         required:true,
@@ -31,7 +31,7 @@ const NotesSchema = new Schema ({
         required:false,
         trim:true
     },
-    fecha:{
+    date:{
         type:String,
         unique:false,
         required:true,

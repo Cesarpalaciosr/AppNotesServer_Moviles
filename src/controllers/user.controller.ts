@@ -82,7 +82,7 @@ export const FindUser = async (req: Request,res: Response): Promise<Response> =>
     }
 
     await User.deleteOne({_id:req.body._id});
-    await Notes.deleteMany({owner:req.body._id});
+    await Notes.deleteMany({owner:req.body.owner});
     return res.status(201).json({msg:"Cuenta eliminada con exito"});
 
 }

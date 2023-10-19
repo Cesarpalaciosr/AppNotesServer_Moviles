@@ -17,15 +17,15 @@ router.post('/finduser', passport_1.default.authenticate('jwt', { session: false
 router.post('/deleteuser', passport_1.default.authenticate('jwt', { session: false }), user_controller_1.deleteUser);
 router.post('/edituser', passport_1.default.authenticate('jwt', { session: false }), user_controller_1.edituser);
 router.post('/editpass', passport_1.default.authenticate('jwt', { session: false }), user_controller_1.editpassword);
-//enpoints para notes
+//endpoints para notes
 router.post('/newnote', passport_1.default.authenticate('jwt', { session: false }), notes_controller_1.newNote);
 router.post('/shownotes', passport_1.default.authenticate('jwt', { session: false }), notes_controller_1.showNotes);
 router.post('/showdetails', passport_1.default.authenticate('jwt', { session: false }), notes_controller_1.showDetails);
 router.post('/edit', passport_1.default.authenticate('jwt', { session: false }), notes_controller_1.editContent);
-router.post('/delete', passport_1.default.authenticate('jwt', { session: false }), notes_controller_1.deleteNote);
-router.post('/addnote', passport_1.default.authenticate('jwt', { session: false }), notes_controller_1.AddtoFolder);
+router.post('/deletenote', passport_1.default.authenticate('jwt', { session: false }), notes_controller_1.deleteNote);
+router.post('/addfolder', passport_1.default.authenticate('jwt', { session: false }), notes_controller_1.AddtoFolder);
 router.post('/showfolder', passport_1.default.authenticate('jwt', { session: false }), notes_controller_1.shownotesinaFolder);
-//enpoints para carpetas
+//endpoints para carpetas
 router.post('/newfolder', passport_1.default.authenticate('jwt', { session: false }), folder_controller_1.newFolder);
 router.post('/showfolder', passport_1.default.authenticate('jwt', { session: false }), folder_controller_1.showFolder);
 router.post('/deletefolder', passport_1.default.authenticate('jwt', { session: false }), folder_controller_1.deleteFolder);

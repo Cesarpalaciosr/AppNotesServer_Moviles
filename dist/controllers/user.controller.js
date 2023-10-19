@@ -79,7 +79,7 @@ const deleteUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         return res.status(400).json({ msg: 'el usuario que busco no existe' });
     }
     yield user_1.default.deleteOne({ _id: req.body._id });
-    yield notes_1.default.deleteMany({ owner: req.body._id });
+    yield notes_1.default.deleteMany({ owner: req.body.owner });
     return res.status(201).json({ msg: "Cuenta eliminada con exito" });
 });
 exports.deleteUser = deleteUser;

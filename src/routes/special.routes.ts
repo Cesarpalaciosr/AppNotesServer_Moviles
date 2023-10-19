@@ -14,24 +14,24 @@ router.get('/special', passport.authenticate('jwt', {session: false}), (req, res
 
 
 //endpoints para users
-router.post('/finduser',passport.authenticate('jwt', {session: false}),FindUser)
-router.post('/deleteuser',passport.authenticate('jwt', {session: false}),deleteUser)
-router.post('/edituser', passport.authenticate('jwt', {session:false}),edituser)
-router.post('/editpass',passport.authenticate('jwt', {session:false}),editpassword)
+router.post('/finduser',passport.authenticate('jwt', {session: false}),FindUser);
+router.post('/deleteuser',passport.authenticate('jwt', {session: false}),deleteUser);
+router.post('/edituser', passport.authenticate('jwt', {session:false}),edituser);
+router.post('/editpass',passport.authenticate('jwt', {session:false}),editpassword);
 
-//enpoints para notes
-router.post('/newnote',passport.authenticate('jwt', {session: false}),newNote)
-router.post('/shownotes',passport.authenticate('jwt', {session: false}),showNotes)  
-router.post('/showdetails',passport.authenticate('jwt', {session: false}),showDetails)
-router.post('/edit',passport.authenticate('jwt', {session: false}),editContent)
-router.post('/delete',passport.authenticate('jwt', {session: false}),deleteNote)
-router.post('/addnote',passport.authenticate('jwt', {session: false}),AddtoFolder)
-router.post('/showfolder',passport.authenticate('jwt', {session: false}),shownotesinaFolder)
+//endpoints para notes
+router.post('/newnote',passport.authenticate('jwt', {session: false}),newNote);
+router.post('/shownotes',passport.authenticate('jwt', {session: false}),showNotes);
+router.post('/showdetails',passport.authenticate('jwt', {session: false}),showDetails);
+router.post('/edit',passport.authenticate('jwt', {session: false}),editContent);
+router.post('/deletenote',passport.authenticate('jwt', {session: false}),deleteNote);
+router.post('/addfolder',passport.authenticate('jwt', {session: false}),AddtoFolder);
+router.post('/showfolder',passport.authenticate('jwt', {session: false}),shownotesinaFolder);
 
-//enpoints para carpetas
-router.post('/newfolder',passport.authenticate('jwt', {session: false}),newFolder)
-router.post('/showfolder',passport.authenticate('jwt', {session: false}),showFolder)
-router.post('/deletefolder',passport.authenticate('jwt', {session: false}),deleteFolder)
+//endpoints para carpetas
+router.post('/newfolder',passport.authenticate('jwt', {session: false}),newFolder);
+router.post('/showfolder',passport.authenticate('jwt', {session: false}),showFolder);
+router.post('/deletefolder',passport.authenticate('jwt', {session: false}),deleteFolder);
 
 
 export default router

@@ -18,7 +18,7 @@ const NotesSchema = new mongoose_1.Schema({
         required: true,
         trim: true
     },
-    titulo: {
+    tittle: {
         type: String,
         unique: false,
         required: true,
@@ -30,7 +30,7 @@ const NotesSchema = new mongoose_1.Schema({
         required: false,
         trim: true
     },
-    fecha: {
+    date: {
         type: String,
         unique: false,
         required: true,
