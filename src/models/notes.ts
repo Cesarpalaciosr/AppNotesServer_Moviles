@@ -4,7 +4,7 @@ import { Model, Schema, Document, model } from "mongoose";
 export interface Notes extends Document {
     owner:string,
     titulo:string,
-    descripcion:string,
+    description:string,
     fecha:string,
     folder:string,
     
@@ -25,7 +25,7 @@ const NotesSchema = new Schema ({
         required:true,
         trim:true
     },
-    descripcion:{
+    description:{
         type:String,
         unique:false,
         required:false,

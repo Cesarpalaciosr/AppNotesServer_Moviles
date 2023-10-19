@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-// dotenv.config({ path: '../../.env' })
 console.log(process.env.PORT);
 exports.default = {
     jwtSecret: process.env.JWT_SECRE || 'somesecrettoken',

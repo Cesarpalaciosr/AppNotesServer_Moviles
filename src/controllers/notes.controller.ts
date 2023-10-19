@@ -57,20 +57,20 @@ export const deleteNote = async (req: Request, res: Response): Promise<Response>
 }
 
 
-export const AddtoCarpeta = async (req: Request,res: Response): Promise<Response> =>{
-    const folder = await Folder.findOne({name:req.body.namefolder})
+export const AddtoFolder = async (req: Request,res: Response): Promise<Response> =>{
+    const folder = await Folder.findOne({name_folder:req.body.name_folder})
     
     if (!folder) {
         return res.status(400).json({msg:"la carpeta que ingreso no existe"})
     }
-    await Notes.updateOne({_id:req.body.idnote},{folder:req.body.namefolder});
+    await Notes.updateOne({_id:req.body.idnote},{folder:req.body.name_folder});
     return res.status(201).json({msg:"nota agregada con exito"})
     
 }
 
-export const shownotesinaCarpeta = async (req: Request, res: Response): Promise<Response>=>{
+export const shownotesinaFolder = async (req: Request, res: Response): Promise<Response>=>{
     
-    const notes = await Notes.find({folder:req.body.folder});
+    const notes = await Notes.find({name_folder:req.body.name_folder});
     if (!notes) {
         return res.status(400).json({msg:"La caroeta que busco no existe"})
     }

@@ -11,9 +11,9 @@ const passport_2 = __importDefault(require("./middlewares/passport"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const auth_routes_1 = __importDefault(require("./routes/auth.routes"));
 const special_routes_1 = __importDefault(require("./routes/special.routes"));
+dotenv_1.default.config();
 //initialization
 const app = (0, express_1.default)();
-dotenv_1.default.config();
 //settings
 app.set('port', process.env.PORT || 3000);
 //middlewares
