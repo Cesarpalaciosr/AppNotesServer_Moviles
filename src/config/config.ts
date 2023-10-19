@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 dotenv.config();
-console.log(process.env.PORT);
 
 export default{
     jwtSecret: process.env.JWT_SECRE || 'somesecrettoken',
