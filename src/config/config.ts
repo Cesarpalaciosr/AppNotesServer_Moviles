@@ -1,7 +1,5 @@
 import dotenv from 'dotenv';
 dotenv.config();
-
-// dotenv.config({ path: '../../.env' })
 console.log(process.env.PORT);
 
 export default{

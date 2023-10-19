@@ -10,6 +10,7 @@ function createToken(user:IUser) {
             username: user.username
         },
     config.jwtSecret,
+    
     //expira en 15 dias
      {expiresIn: 1296000});
 }
